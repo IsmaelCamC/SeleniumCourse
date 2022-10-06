@@ -11,16 +11,27 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class App {
-	@SuppressWarnings("deprecation")
+	
 	public static void main(String[] args) {
+		
+	}
+
+	@BeforeTest
+	public static void setup() {
 		System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
+	}
+
+	@Test
+	public void test1(WebDriver driver){
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		driver.manage().window().maximize();
-		// SELENIUM EXERCISE
 		// STEP 1
 		driver.get("http://automationpractice.com/index.php");
 		// STEP 2
@@ -63,8 +74,12 @@ public class App {
 		driver.findElement(By.id("other")).sendKeys("Other info");
 		driver.findElement(By.id("phone_mobile")).sendKeys("83346222424");
 		driver.findElement(By.id("alias")).sendKeys("My address number 1");
-		//STEP 6
+		// STEP 6
 		driver.findElement(By.id("submitAccount")).click();
-		// driver.close();
+	}
+	
+	@AfterClass
+	public void exit(WebDriver driver) {
+		driver.close();
 	}
 }
