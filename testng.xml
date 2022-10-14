@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+<listeners>
+<listener class-name="hexaware.seleniumcourse.Listeners"/>
+</listeners>
+	<test verbose="1" name="Default test">
+		<classes>
+			<class name="hexaware.seleniumcourse.App" />
+		<methods>
+		</methods>
+		</classes>
+	</test> <!-- Default test -->
+</suite> <!-- Default suite -->
