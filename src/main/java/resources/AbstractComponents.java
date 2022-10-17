@@ -49,8 +49,4 @@ public class AbstractComponents {
 		}
 	}
 	
-	
-	public void maximizeWindow() {
-		driver.manage().window().maximize();
-	}
 }

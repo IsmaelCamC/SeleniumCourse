@@ -33,7 +33,6 @@ public class App extends BaseTest{
 	@Test //(retryAnalyzer = Retry.class)
 	public void test1() {
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2
 		home.loginClick();
@@ -67,7 +66,6 @@ public class App extends BaseTest{
 	public void test2() {
 		// SECOND PART
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2
 		home.loginClick();
@@ -80,7 +78,6 @@ public class App extends BaseTest{
 	@Test
 	public void test3() {
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2
 		home.loginClick();
@@ -95,7 +92,6 @@ public class App extends BaseTest{
 	@Test
 	public void test4() {
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2
 		home.loginClick();
@@ -121,7 +117,6 @@ public class App extends BaseTest{
 	@Test
 	public void test5() {
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2 & 3
 		home.viewTShirts();
@@ -137,7 +132,6 @@ public class App extends BaseTest{
 	@Test
 	public void test6() {
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2 & 3
 		home.loginClick();
@@ -170,7 +164,6 @@ public class App extends BaseTest{
 	@Test
 	public void test7() {
 		// STEP 1
-		home.maximizeWindow();
 		home.goToHome();
 		// STEP 2 & 3
 		home.viewTShirts();
