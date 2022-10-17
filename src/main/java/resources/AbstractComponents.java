@@ -1,13 +1,20 @@
 package resources;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+//import org.apache.tools.ant.util.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.commons.io.FileUtils;
+
 
 public class AbstractComponents {
 	WebDriver driver;
@@ -40,12 +47,8 @@ public class AbstractComponents {
 		} else {
 			js.executeScript("window.scrollBy("+script+",0)", "");
 		}
-		
 	}
 	
-	public void implicitWait() {
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	}
 	
 	public void maximizeWindow() {
 		driver.manage().window().maximize();

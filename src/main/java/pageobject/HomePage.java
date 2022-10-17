@@ -57,7 +57,6 @@ public class HomePage extends AbstractComponents{
 	}
 	
 	public void viewTShirts() {
-		implicitWait();
 		Actions builder = new Actions(driver);
 		builder.moveToElement(womenSection).perform();
 		tShirts.click();

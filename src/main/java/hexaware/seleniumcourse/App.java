@@ -1,38 +1,36 @@
 package hexaware.seleniumcourse;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import TestComponents.BaseTest;
 import pageobject.Checkout;
 import pageobject.HomePage;
 import pageobject.LoginRegister;
 import pageobject.NewUserPage;
 
-public class App {
-	WebDriver driver;
-	WebDriverWait wait;
+public class App extends BaseTest{
 	HomePage home;
 	LoginRegister register;
 	NewUserPage information;
 	Checkout checkout;
+	
 
 	@BeforeMethod
-	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
-		driver = new ChromeDriver();
+	public void setup() throws IOException {
+		driver = initializeDriver();
 		home = new HomePage(driver);
 		register = new LoginRegister(driver);
 		information = new NewUserPage(driver);
 		checkout = new Checkout(driver);
 	}
 
-	@Test (retryAnalyzer = Retry.class)
+	@Test //(retryAnalyzer = Retry.class)
 	public void test1() {
 		// STEP 1
 		home.maximizeWindow();
@@ -43,7 +41,6 @@ public class App {
 		register.createAccount("@yopmail.com");
 		// STEP 5
 		register.executeScript(true, "150");
-		register.implicitWait();
 		information.setGender();
 		information.setFirstName("Juan Ismael");
 		information.setLastName("Camacho Cervantes");
@@ -63,7 +60,6 @@ public class App {
 		// STEP 6
 		information.sendInfo();
 		// STEP 7
-		information.implicitWait();
 		Assert.assertTrue(driver.findElement(By.id("my-account")).isDisplayed());
 	}
 
@@ -78,7 +74,6 @@ public class App {
 		// STEP 3
 		register.loginForm("email@@yopmail.com", "");
 		// STEP 4
-		register.implicitWait();
 		Assert.assertEquals(register.badMail(), "Invalid email address.");
 	}
 
@@ -93,9 +88,7 @@ public class App {
 		register.createAccount("@yopmail.com");
 		// STEP 4
 		register.executeScript(true, "150");
-		register.implicitWait();
 		information.sendInfo();
-		information.implicitWait();
 		Assert.assertEquals(information.getErrorCount(), "There are 8 errors");
 	}
 
@@ -110,7 +103,6 @@ public class App {
 		register.createAccount("@yopmail.com");
 		// STEP 4
 		register.executeScript(true, "150");
-		register.implicitWait();
 		information.setFirstName("Juan Ismael");
 		information.setLastName("Camacho Cervantes");
 		information.setPassword("Password123");

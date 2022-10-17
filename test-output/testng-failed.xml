@@ -4,17 +4,12 @@
   <listeners>
     <listener class-name="hexaware.seleniumcourse.Listeners"/>
   </listeners>
-  <test name="Default test(failed)" parallel="methods">
+  <test name="Default test(failed)">
     <classes>
       <class name="hexaware.seleniumcourse.App">
         <methods>
           <include name="setup"/>
-          <include name="test2"/>
           <include name="test1"/>
-          <include name="test6"/>
-          <include name="test5"/>
-          <include name="test4"/>
-          <include name="test3"/>
           <include name="exit"/>
         </methods>
       </class> <!-- hexaware.seleniumcourse.App -->
