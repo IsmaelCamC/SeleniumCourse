@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="38722" started-at="2022-10-14T20:11:11Z" finished-at="2022-10-14T20:11:50Z">
+  <suite name="Default suite" duration-ms="12650" started-at="2022-10-16T23:34:21Z" finished-at="2022-10-16T23:34:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="38722" started-at="2022-10-14T20:11:11Z" finished-at="2022-10-14T20:11:50Z">
+    <test name="Default test" duration-ms="12650" started-at="2022-10-16T23:34:21Z" finished-at="2022-10-16T23:34:34Z">
       <class name="hexaware.seleniumcourse.App">
-        <test-method status="PASS" signature="setup()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="setup" is-config="true" duration-ms="2459" started-at="2022-10-14T15:11:11Z" finished-at="2022-10-14T15:11:14Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:hexaware.seleniumcourse.App@3796751b]" name="setup" is-config="true" duration-ms="2866" started-at="2022-10-16T18:34:21Z" finished-at="2022-10-16T18:34:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="test1" duration-ms="14008" started-at="2022-10-14T15:11:14Z" finished-at="2022-10-14T15:11:28Z">
+        <test-method status="PASS" signature="test7()[pri:0, instance:hexaware.seleniumcourse.App@3796751b]" name="test7" duration-ms="9626" started-at="2022-10-16T18:34:24Z" finished-at="2022-10-16T18:34:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="exit" is-config="true" duration-ms="2437" started-at="2022-10-14T15:11:28Z" finished-at="2022-10-14T15:11:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="setup" is-config="true" duration-ms="1300" started-at="2022-10-14T15:11:30Z" finished-at="2022-10-14T15:11:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="test2" duration-ms="6745" started-at="2022-10-14T15:11:31Z" finished-at="2022-10-14T15:11:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="exit" is-config="true" duration-ms="101" started-at="2022-10-14T15:11:38Z" finished-at="2022-10-14T15:11:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- exit -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="setup" is-config="true" duration-ms="1289" started-at="2022-10-14T15:11:38Z" finished-at="2022-10-14T15:11:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method status="PASS" signature="test3()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="test3" duration-ms="10241" started-at="2022-10-14T15:11:40Z" finished-at="2022-10-14T15:11:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test3 -->
-        <test-method status="PASS" signature="exit()[pri:0, instance:hexaware.seleniumcourse.App@2812cbfa]" name="exit" is-config="true" duration-ms="130" started-at="2022-10-14T15:11:50Z" finished-at="2022-10-14T15:11:50Z">
+        </test-method> <!-- test7 -->
+        <test-method status="PASS" signature="exit()[pri:0, instance:hexaware.seleniumcourse.App@3796751b]" name="exit" is-config="true" duration-ms="152" started-at="2022-10-16T18:34:34Z" finished-at="2022-10-16T18:34:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- exit -->

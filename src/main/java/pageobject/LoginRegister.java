@@ -21,6 +21,9 @@ public class LoginRegister extends AbstractComponents {
 	@FindBy(id="email")
 	WebElement emailAddressSignIn;
 	
+	@FindBy(id="passwd")
+	WebElement password;
+	
 	@FindBy(id="SubmitLogin")
 	WebElement submitLogin;
 	
@@ -40,8 +43,9 @@ public class LoginRegister extends AbstractComponents {
 		submitInformation.click();
 	}
 
-	public void loginForm(String email) {
+	public void loginForm(String email, String passwd) {
 		emailAddressSignIn.sendKeys(email);
+		password.sendKeys(passwd);
 		submitLogin.click();
 	}
 	

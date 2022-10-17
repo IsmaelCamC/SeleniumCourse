@@ -33,9 +33,14 @@ public class AbstractComponents {
 		return number;
 	}
 	
-	public void executeScript(String script) {
+	public void executeScript(Boolean vertical,String script) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript(script, "");
+		if (vertical==true) {
+			js.executeScript("window.scrollBy(0,"+script+")", "");
+		} else {
+			js.executeScript("window.scrollBy("+script+",0)", "");
+		}
+		
 	}
 	
 	public void implicitWait() {

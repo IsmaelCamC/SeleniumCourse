@@ -1,8 +1,12 @@
 package pageobject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -35,39 +39,43 @@ public class NewUserPage extends AbstractComponents {
 
 	@FindBy(id = "years")
 	WebElement selectYears;
-	
-	@FindBy (id = "company")
+
+	@FindBy(id = "company")
 	WebElement company;
-	
-	@FindBy (id="address1")
+
+	@FindBy(id = "address1")
 	WebElement address1Txt;
-	
-	@FindBy(id="address2")
+
+	@FindBy(id = "address2")
 	WebElement address2Txt;
-	
-	@FindBy (id = "city")
+
+	@FindBy(id = "city")
 	WebElement cityTxt;
-	
-	@FindBy (id = "id_state")
+
+	@FindBy(id = "id_state")
 	WebElement id_state;
-	
-	@FindBy (id = "postcode")
+
+	@FindBy(id = "postcode")
 	WebElement postcode;
-	
-	@FindBy (id = "other")
+
+	@FindBy(id = "other")
 	WebElement otherInfo;
-	
-	@FindBy (id = "phone_mobile")
+
+	@FindBy(id = "phone_mobile")
 	WebElement phone_mobile;
-	
-	@FindBy (id = "alias")
+
+	@FindBy(id = "alias")
 	WebElement alias;
-	
-	@FindBy(id="submitAccount")
+
+	@FindBy(id = "submitAccount")
 	WebElement submitButton;
-	
+
 	@FindBy(css = "div[class='alert alert-danger'] p")
 	WebElement errorCount;
+
+	@FindAll(@FindBy(css = "//*[@id=\"center_column\"]/div/ol/li"))
+	List<WebElement> getErrorsXpath;
+
 	
 	public NewUserPage(WebDriver driver) {
 		super(driver);
@@ -107,46 +115,58 @@ public class NewUserPage extends AbstractComponents {
 		Select years = new Select(selectYears);
 		years.selectByValue(yearNumber);
 	}
-	
+
 	public void setCompany(String companyName) {
 		company.sendKeys(companyName);
 	}
-	
+
 	public void setAddress(String address1, String address2) {
 		address1Txt.sendKeys(address1);
 		address2Txt.sendKeys(address2);
 	}
-	
+
 	public void setCity(String city) {
 		cityTxt.sendKeys(city);
 	}
-	
+
 	public void setState(String state) {
 		Select stateSelect = new Select(id_state);
 		stateSelect.selectByValue(state);
 	}
-	
+
 	public void setPostCode(String post) {
 		postcode.sendKeys(post);
 	}
-	
+
 	public void setOtherInfo(String other) {
 		otherInfo.sendKeys(other);
 	}
-	
+
 	public void setPhoneMobile(String phone) {
 		phone_mobile.sendKeys(phone);
 	}
-	
+
 	public void setAlias(String aliasAddress) {
 		alias.sendKeys(aliasAddress);
 	}
-	
+
 	public void sendInfo() {
 		submitButton.click();
 	}
-	
+
 	public String getErrorCount() {
 		return errorCount.getText();
 	}
+
+	public ArrayList getErrors() {
+		super.waitElementVisible(errorCount);
+		ArrayList<String> errorsText = new ArrayList();
+		for (WebElement getError:getErrorsXpath) {
+			getError.click();
+			errorsText.add(getError.findElement(By.tagName("li")).getAttribute("innerHTML"));
+			System.out.println(getError.getText());
+		}
+		return errorsText;
+	}
+	
 }
