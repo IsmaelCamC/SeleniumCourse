@@ -33,6 +33,10 @@ public class AbstractComponents {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
+	public void waitElementUpdateText(WebElement element,String text) {
+		wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+	}
+	
 	public int randomNumbers() {
 		int max = 9999;
 		int min = 0001;

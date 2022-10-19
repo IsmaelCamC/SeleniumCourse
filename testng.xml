@@ -9,7 +9,7 @@
 			<class name="hexaware.seleniumcourse.App" />
 			<methods>
 			
-				<include name="test1"></include>
+				<include name="test8"></include>
 				 <!-- 
 				<include name="test2"></include>
 				<include name="test3"></include>

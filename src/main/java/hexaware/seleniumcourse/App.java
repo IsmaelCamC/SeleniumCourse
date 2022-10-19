@@ -20,7 +20,6 @@ public class App extends BaseTest{
 	NewUserPage information;
 	Checkout checkout;
 	
-
 	@BeforeMethod
 	public void setup() throws IOException {
 		driver = initializeDriver();
@@ -30,7 +29,7 @@ public class App extends BaseTest{
 		checkout = new Checkout(driver);
 	}
 
-	@Test //(retryAnalyzer = Retry.class)
+	@Test (retryAnalyzer = Retry.class)
 	public void test1() {
 		// STEP 1
 		home.goToHome();
@@ -171,6 +170,34 @@ public class App extends BaseTest{
 		home.addToWishList();
 		//STEP 6
 		Assert.assertEquals(home.getError(), "You must be logged in to manage your wishlist.");
+	}
+	
+	@Test
+	public void test8() {
+		// STEP 1
+		home.goToHome();
+		// STEP 2 & 3
+		home.loginClick();
+		register.loginForm("email@yopmail.com", "password123");
+		home.viewTShirts();
+		// STEP 4
+		home.viewFirstElement();
+		// STEP 5&6
+		home.elementMore();
+		// STEP 7
+		checkout.changeQuantity("1");
+		// STEP 8
+		checkout.changeSize("2");
+		// STEP 9
+		checkout.changeColor();
+		//STEP 10
+		checkout.addToCart();
+		//STEP 11
+		checkout.proceedCheckout();
+		Assert.assertEquals(checkout.priceToPayCheckout(), "$16.51");
+		//STEP 12
+		checkout.addOne();
+		Assert.assertEquals(checkout.priceToPayCheckout("$33.02"), "$33.02");
 	}
 
 	@AfterMethod

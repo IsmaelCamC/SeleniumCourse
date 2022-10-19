@@ -45,6 +45,12 @@ public class Checkout extends AbstractComponents {
 
 	@FindBy(css = "span[class='price']")
 	WebElement priceConfirmationOrder;
+	
+	@FindBy(xpath="/html/body/div/div[2]/div/div[3]/div/div[2]/table/tbody/tr/td[6]/span")
+	WebElement priceToPayCheckout1;
+	
+	@FindBy(css="i[class='icon-plus']")
+	WebElement add1;
 
 	public Checkout(WebDriver driver) {
 		super(driver);
@@ -110,5 +116,21 @@ public class Checkout extends AbstractComponents {
 		executeScript(true, "300");
 		waitElementVisible(priceConfirmationOrder);
 		return priceConfirmationOrder.getText();
+	}
+	
+	
+	public String priceToPayCheckout(String text) {
+		waitElementUpdateText(priceToPayCheckout1,"$33.02");
+		return priceToPayCheckout1.getText();
+	}
+	
+	public String priceToPayCheckout() {
+		executeScript(true,"300");
+		waitElementVisible(priceToPayCheckout1);
+		return priceToPayCheckout1.getText();
+	}
+	
+	public void addOne() {
+		add1.click();
 	}
 }

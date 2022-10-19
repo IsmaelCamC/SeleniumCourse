@@ -14,6 +14,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pageobject.Checkout;
+import pageobject.HomePage;
+import pageobject.LoginRegister;
+import pageobject.NewUserPage;
 
 public class BaseTest {
 
@@ -35,10 +39,7 @@ public class BaseTest {
 			// EDGE
 		}
 		driver.manage().window().maximize();
-		return driver;
-	
-		 
-		 
+		return driver;		 
 	}
 	
 	public String getScreenshot(String testCaseName) throws IOException {
@@ -49,7 +50,10 @@ public class BaseTest {
 		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
 	}
 	
-	public void launchApp() throws IOException {
-		driver = initializeDriver();
+	public String[] data(String testname) {
+		//String[] a = getData(testname);
+		return null;
+		
 	}
+	
 }
