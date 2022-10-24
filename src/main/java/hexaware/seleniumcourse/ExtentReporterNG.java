@@ -5,7 +5,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReporterNG {
 	
-	public static ExtentReports getReportObject() {
+	public synchronized static ExtentReports getReportObject() {
 		String path = System.getProperty("user.dir")+"//reports/index.html";
 		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
 		reporter.config().setReportName("Selenium exercise extent report.");

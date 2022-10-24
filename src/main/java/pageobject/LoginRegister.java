@@ -1,12 +1,9 @@
 package pageobject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import resources.AbstractComponents;
 
 public class LoginRegister extends AbstractComponents {
@@ -41,12 +38,14 @@ public class LoginRegister extends AbstractComponents {
 		emailCreateTextBox.sendKeys(super.randomNumbers()+email);
 		super.waitElementVisible(submitInformation);
 		submitInformation.click();
+		passStep("Successfully submited email and clicked on 'Register' button.");
 	}
 
 	public void loginForm(String email, String passwd) {
 		emailAddressSignIn.sendKeys(email);
 		password.sendKeys(passwd);
 		submitLogin.click();
+		passStep("Successfully submited email and clicked on 'Login' button.");
 	}
 	
 	public String badMail() {

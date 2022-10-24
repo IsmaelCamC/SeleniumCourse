@@ -8,6 +8,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.Status;
+
 import TestComponents.BaseTest;
 import pageobject.Checkout;
 import pageobject.HomePage;
@@ -19,10 +21,11 @@ public class App extends BaseTest{
 	LoginRegister register;
 	NewUserPage information;
 	Checkout checkout;
+	//Listeners listener;
 	
 	@BeforeMethod
 	public void setup() throws IOException {
-		driver = initializeDriver();
+		driver = initializeDriver("chrome");
 		home = new HomePage(driver);
 		register = new LoginRegister(driver);
 		information = new NewUserPage(driver);
@@ -31,6 +34,7 @@ public class App extends BaseTest{
 
 	@Test (retryAnalyzer = Retry.class)
 	public void test1() {
+		//Declare browser to use
 		// STEP 1
 		home.goToHome();
 		// STEP 2

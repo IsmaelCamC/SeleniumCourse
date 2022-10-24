@@ -13,10 +13,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.aventstack.extentreports.Status;
+
+import TestComponents.BaseTest;
+
 import org.apache.commons.io.FileUtils;
 
 
-public class AbstractComponents {
+public class AbstractComponents extends BaseTest {
 	WebDriver driver;
 	WebDriverWait wait;
 
@@ -51,6 +56,10 @@ public class AbstractComponents {
 		} else {
 			js.executeScript("window.scrollBy("+script+",0)", "");
 		}
+	}
+	
+	public void passStep(String details) {
+		getExtentTest().get().log(Status.PASS, details);
 	}
 	
 }

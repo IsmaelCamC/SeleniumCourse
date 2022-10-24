@@ -13,6 +13,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
+import hexaware.seleniumcourse.ExtentReporterNG;
+import hexaware.seleniumcourse.Listeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageobject.Checkout;
 import pageobject.HomePage;
@@ -20,15 +25,20 @@ import pageobject.LoginRegister;
 import pageobject.NewUserPage;
 
 public class BaseTest {
-
+	String browserName;
+	private ExtentTest test;
+	private ExtentReports extent = ExtentReporterNG.getReportObject();
+	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	
 	public WebDriver driver;
 	
-	public WebDriver initializeDriver() throws IOException {
+	public WebDriver initializeDriver(String browserName) throws IOException {
 		// Properties
-		Properties prop = new Properties();
+		/*Properties prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//java//resources//globaldata.properties");
 		prop.load(fis);
-		String browserName = prop.getProperty("browser");
+		String browserName = prop.getProperty("browser");*/
+		
 		if (browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
 			 driver = new ChromeDriver();
@@ -49,11 +59,34 @@ public class BaseTest {
 		FileUtils.copyFile(source, file);
 		return System.getProperty("user.dir")+"//reports//"+testCaseName+".png";
 	}
-	
-	public String[] data(String testname) {
-		//String[] a = getData(testname);
-		return null;
-		
+
+	public ThreadLocal<ExtentTest> getExtentTest() {
+		return extentTest;
 	}
+
+	public void setExtentTest(ThreadLocal<ExtentTest> extentTest) {
+		this.extentTest = extentTest;
+	}
+
+	public ExtentReports getExtent() {
+		return extent;
+	}
+
+	public void setExtent(ExtentReports extent) {
+		this.extent = extent;
+	}
+
+	public ExtentTest getTest() {
+		return test;
+	}
+
+	public void setTest(ExtentTest test) {
+		this.test = test;
+	}
+	
+	//public ThreadLocal<ExtentTest> getTest() {
+		//return listener.getTest();
+	//}
+
 	
 }

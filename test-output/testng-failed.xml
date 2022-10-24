@@ -9,8 +9,8 @@
       <class name="hexaware.seleniumcourse.App">
         <methods>
           <include name="setup"/>
+          <include name="test1"/>
           <include name="exit"/>
-          <include name="test8"/>
         </methods>
       </class> <!-- hexaware.seleniumcourse.App -->
     </classes>

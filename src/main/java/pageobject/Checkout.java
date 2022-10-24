@@ -61,24 +61,29 @@ public class Checkout extends AbstractComponents {
 	public void changeQuantity(String quantity) {
 		quantityText.clear();
 		quantityText.sendKeys(quantity);
+		passStep("Changed quantity correctly.");
 	}
 
 	public void changeSize(String value) {
 		Select size = new Select(sizeSelect);
 		size.selectByValue(value);
+		passStep("Changed size correctly.");
 	}
 
 	public void changeColor() {
 		color.click();
+		passStep("Changed color correctly.");
 	}
 
 	public void addToCart() {
 		buttonCart.click();
+		passStep("Item added to cart.");
 	}
 
 	public void proceedCheckout() {
 		waitElementVisible(proceedCheckout);
 		proceedCheckout.click();
+		passStep("Clicked on 'Proceed to checkout' correctly");
 	}
 
 	public void nextStepSummary() {
@@ -110,6 +115,7 @@ public class Checkout extends AbstractComponents {
 		executeScript(true, "800");
 		waitElementVisible(nextStepFinal);
 		nextStepFinal.click();
+		passStep("Clicked next on each step.");
 	}
 
 	public String priceConfirmation() {
@@ -132,5 +138,6 @@ public class Checkout extends AbstractComponents {
 	
 	public void addOne() {
 		add1.click();
+		passStep("Added one more item.");
 	}
 }

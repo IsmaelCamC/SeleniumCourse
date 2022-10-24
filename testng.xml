@@ -9,15 +9,15 @@
 			<class name="hexaware.seleniumcourse.App" />
 			<methods>
 			
-				<include name="test8"></include>
-				 <!-- 
+				<include name="test1"></include>
+				  
 				<include name="test2"></include>
 				<include name="test3"></include>
 				<include name="test4"></include>
 				<include name="test5"></include>
 				<include name="test6"></include> 
 				<include name="test7"></include> 
-				<include name="test8"></include> -->
+				<include name="test8"></include>
 			</methods>
 		</classes>
 	</test> <!-- Default test -->

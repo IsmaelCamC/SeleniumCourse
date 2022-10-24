@@ -152,6 +152,7 @@ public class NewUserPage extends AbstractComponents {
 
 	public void sendInfo() {
 		submitButton.click();
+		passStep("Successfully submited information and finished clicking on 'Register' button.");
 	}
 
 	public String getErrorCount() {
