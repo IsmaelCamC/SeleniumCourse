@@ -15,7 +15,6 @@ public class HomePage extends AbstractComponents{
 	@FindBy(xpath = "//*[@id=\"js-app\"]/div[1]/div[1]/div[1]/div/div[2]/div/button")
 	WebElement loginButton;
 	
-	
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -25,6 +24,7 @@ public class HomePage extends AbstractComponents{
 
 	public void goToHome() {
 		driver.get("https://woodmans-whitelabel.instacart.com/store/woodmans-food-markets/storefront");
+		this.passStep("Cool");
 	}
 
 	}

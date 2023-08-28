@@ -23,6 +23,7 @@ public class App extends BaseTest{
 	public void test1() {
 		//Declare browser to use
 		home.goToHome();
+		
 	}
 
 

@@ -19,10 +19,6 @@ import com.aventstack.extentreports.ExtentTest;
 import hexaware.seleniumcourse.ExtentReporterNG;
 import hexaware.seleniumcourse.Listeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pageobject.Checkout;
-import pageobject.HomePage;
-import pageobject.LoginRegister;
-import pageobject.NewUserPage;
 
 public class BaseTest {
 	String browserName;
