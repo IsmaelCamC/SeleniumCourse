@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Default suite">
-	<listeners>
-		<listener class-name="hexaware.seleniumcourse.Listeners" />
-	</listeners>
-	<test verbose="1" name="Default test">
-		<classes>
-			<class name="hexaware.seleniumcourse.App" />
-			<methods>
-			
-				<include name="test1"></include>
-				  
-				<include name="test2"></include>
-				<include name="test3"></include>
-				<include name="test4"></include>
-				<include name="test5"></include>
-				<include name="test6"></include> 
-				<include name="test7"></include> 
-				<include name="test8"></include>
-			</methods>
-		</classes>
-	</test> <!-- Default test -->
-</suite> <!-- Default suite -->
+    <suite name="Suite">
+
+        <listeners>
+         <listener class-name="hexaware.seleniumcourse.Listeners" />
+        </listeners>
+        <test thread-count="5" name="Test">
+            <classes>
+               <class name="hexaware.seleniumcourse.App">
+                    <methods>
+                        <include name="test1" />
+                    </methods>
+                </class><!-- close tag should be here-->
+
+            </classes>
+        </test> 
+    </suite>

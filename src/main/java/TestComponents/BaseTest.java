@@ -22,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 	String browserName;
-	public  ExtentTest test;
+	public static ExtentTest test;
 	public ExtentReports extent = ExtentReporterNG.getReportObject();
 	public static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 	

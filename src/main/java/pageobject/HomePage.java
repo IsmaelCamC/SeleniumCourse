@@ -24,7 +24,7 @@ public class HomePage extends AbstractComponents{
 
 	public void goToHome() {
 		driver.get("https://woodmans-whitelabel.instacart.com/store/woodmans-food-markets/storefront");
-		//this.passStep("Cool");
+		this.passStep("Cool");
 	}
 
 	}
