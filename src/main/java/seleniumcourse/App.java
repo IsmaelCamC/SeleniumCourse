@@ -1,4 +1,4 @@
-package hexaware.seleniumcourse;
+package seleniumcourse;
 
 import java.io.IOException;
 

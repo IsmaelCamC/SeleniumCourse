@@ -16,9 +16,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
-import hexaware.seleniumcourse.ExtentReporterNG;
-import hexaware.seleniumcourse.Listeners;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import seleniumcourse.ExtentReporterNG;
+import seleniumcourse.Listeners;
 
 public class BaseTest {
 	String browserName;

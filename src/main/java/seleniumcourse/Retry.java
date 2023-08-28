@@ -1,4 +1,4 @@
-package hexaware.seleniumcourse;
+package seleniumcourse;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
