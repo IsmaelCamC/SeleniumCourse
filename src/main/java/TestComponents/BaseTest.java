@@ -26,9 +26,9 @@ import pageobject.NewUserPage;
 
 public class BaseTest {
 	String browserName;
-	private ExtentTest test;
-	private ExtentReports extent = ExtentReporterNG.getReportObject();
-	private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
+	public  ExtentTest test;
+	public ExtentReports extent = ExtentReporterNG.getReportObject();
+	public static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 	
 	public WebDriver driver;
 	
@@ -40,7 +40,8 @@ public class BaseTest {
 		String browserName = prop.getProperty("browser");*/
 		
 		if (browserName.equalsIgnoreCase("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D:/chromedriver.exe");
+			WebDriverManager.chromedriver().clearDriverCache().setup();
+			
 			 driver = new ChromeDriver();
 			 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		} else if (browserName.equalsIgnoreCase("firefox")) {
@@ -65,7 +66,7 @@ public class BaseTest {
 	}
 
 	public void setExtentTest(ThreadLocal<ExtentTest> extentTest) {
-		this.extentTest = extentTest;
+		BaseTest.extentTest = extentTest;
 	}
 
 	public ExtentReports getExtent() {

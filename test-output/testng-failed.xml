@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <listeners>
-    <listener class-name="hexaware.seleniumcourse.Listeners"/>
-  </listeners>
-  <test name="Default test(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="hexaware.seleniumcourse.App">
         <methods>
           <include name="setup"/>
-          <include name="test1"/>
           <include name="exit"/>
+          <include name="test1"/>
         </methods>
       </class> <!-- hexaware.seleniumcourse.App -->
     </classes>
